@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>GET github users</title>
+  </head>
+  <button id="load-users">Load Users</button>
+  <div id="users-container"></div>
+  <body>
+    <script>
+      document.getElementById("load-users").addEventListener("click", loadUsers);
+
+      function loadUsers() {
+        let url = "https://api.github.com/users";
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.onload = function () {
+          if (this.status == 200) {
+            let users = JSON.parse(this.responseText);
+            console.log(users);
+            let html = "";
+            for (let i in users) {
+              html += `<div class="user">
+                      <img src="${users[i].avatar_url}">
+                      <p>${users[i].login}</p>
+                      <p>ID: ${users[i].id}</p>
+                      
+                      </div>`;
+            }
+            document.getElementById("users-container").innerHTML = html;
+          }
+        };
+        xhr.send();
+      }
+    </script>
+  </body>
+</html>
