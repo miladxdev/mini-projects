@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --background: #e9e5f5;
+  --light-shadow: #ffffff;
+  --dark-shadow: #cdcad8;
+  --text-color: #4b4b6c;
+}
+
+body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  background: var(--background);
+}
+
+.neu-btn {
+  padding: 12px 60px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 24px;
+  color: var(--text-color);
+  background: var(--background);
+  box-shadow: 4px 4px 8px var(--dark-shadow), -4px -4px 8px var(--light-shadow);
+  transition: box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.neu-btn:hover {
+  box-shadow: 2px 2px 4px var(--dark-shadow), -2px -2px 4px var(--light-shadow);
+}
+
+.neu-btn:focus {
+  box-shadow: 0px 0px 0px var(--dark-shadow), 0px 0px 0px var(--light-shadow),
+    inset 4px 4px 8px var(--dark-shadow),
+    inset -4px -4px 8px var(--light-shadow);
+}
+
+.neu-btn:active {
+  box-shadow: 4px 4px 8px var(--dark-shadow), -4px -4px 8px var(--light-shadow),
+    inset 8px 8px 16px var(--dark-shadow),
+    inset -8px -8px 16px var(--light-shadow);
+}
+
+.circle {
+  width: 70px;
+  height: 70px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+/* 
+    neumorphism button 
+    designed by milad gharibi
+    instagram: web.script 
+*/
