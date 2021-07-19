@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter list</title>
+    <style>
+      #input-text {
+        width: 100%;
+        padding: 8px;
+        margin: 0;
+      }
+      a {
+        text-decoration: none;
+      }
+      #list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        background: lightgray;
+      }
+      #list li {
+        padding: 8px;
+        border: 1px solid grey;
+        margin-top: -1px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" name="name" id="input-text" onkeyup="filter()" placeholder="search" />
+    <ul id="list">
+      <li><a href="#">Adele</a></li>
+      <li><a href="#">Agnes</a></li>
+      <li><a href="#">Billy</a></li>
+      <li><a href="#">Bob</a></li>
+      <li><a href="#">Calvin</a></li>
+      <li><a href="#">Christina</a></li>
+      <li><a href="#">Cindy</a></li>
+      <li><a href="#">Catya</a></li>
+    </ul>
+
+    <script>
+      function filter() {
+        let input, inputText, ul, li, a, i, txtValue;
+
+        input = document.getElementById("input-text");
+        inputText = input.value.toUpperCase();
+
+        ul = document.getElementById("list");
+        li = ul.getElementsByTagName("li");
+
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+
+          if (txtValue.toUpperCase().indexOf(inputText) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
