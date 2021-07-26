@@ -14,16 +14,55 @@
       var ctx = canvas.getContext("2d");
       canvas.width = 600;
       canvas.height = 400;
-      ctx.fillStyle = "#cccdee";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.moveTo(40, 40);
-      ctx.lineTo(200, 200);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.arc(200, 200, 50, 0, 2 * Math.PI);
-      ctx.stroke();
-      ctx.font = "30px Arial";
-      ctx.fillText("Hello World", 10, 50);
+
+      let x = 20;
+      let y = 20;
+
+      let dx = 2;
+      let dy = 2;
+
+      let ballRadius = 20;
+
+      function drawBall() {
+        ctx.beginPath();
+        ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
+        ctx.fillStyle = "#0095DD";
+        ctx.fill();
+        ctx.closePath();
+      }
+
+      let paddleHeight = 10;
+      let paddleWidth = 75;
+      let paddleX = (canvas.width - paddleWidth) / 2;
+      let paddleY = canvas.height - paddleHeight;
+
+      function drawPaddle() {
+        ctx.beginPath();
+        ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+        ctx.fillStyle = "#0095DD";
+        ctx.fill();
+        ctx.closePath();
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        drawBall();
+        drawPaddle();
+
+        x += dx;
+        y += dy;
+
+        if (y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
+          dy = -dy;
+        }
+
+        if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
+          dx = -dx;
+        }
+      }
+
+      setInterval(draw, 10);
     </script>
   </body>
 </html>
