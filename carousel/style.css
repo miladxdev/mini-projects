@@ -56,7 +56,6 @@ body {
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
   background-color: rgba(173, 216, 230, 0.2);
 }
 
@@ -79,9 +78,13 @@ body {
 .number {
   color: #f2f2f2;
   font-size: 16px;
+  background-color: rgba(173, 216, 230, 0.2);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
   padding: 8px 12px;
   position: absolute;
-  top: 0;
+  top: 10px;
+  left: 10px;
 }
 .dots-container {
   position: absolute;
