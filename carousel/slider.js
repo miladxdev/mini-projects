@@ -5,16 +5,19 @@ showSlides();
 function nextSlide() {
   slideIndex++;
   showSlides();
+  timer = initial; // reset timer
 }
 function prevSlide() {
   slideIndex--;
   showSlides();
+  timer = initial; // reset timer
 }
 
 // Thumbnail image controlls
 function currentSlide(n) {
   slideIndex = n - 1;
   showSlides();
+  timer = initial; // reset timer
 }
 
 function showSlides() {
@@ -37,4 +40,15 @@ function showSlides() {
   dots[slideIndex].classList.add("active");
 }
 
-setInterval(nextSlide, 10000);
+// autoplay slides
+let timer = 4;
+let initial = timer;
+
+setInterval(() => {
+  timer--;
+
+  if (timer < 1) {
+    nextSlide();
+    timer = initial;
+  }
+}, 1000);
