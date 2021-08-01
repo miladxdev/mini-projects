@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Type Effect</title>
+  </head>
+  <body>
+    <p id="type"></p>
+
+    <script>
+      let text =
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate eos itaque dolorum. Veritatis porro dolore mollitia nulla, explicabo quam obcaecati ducimus asperiores ratione illum? Provident expedita inventore perferendis maxime distinctio!";
+
+      let type = document.querySelector("#type");
+      let speed = 30;
+      let i = 0;
+
+      function typing() {
+        if (i < text.length) {
+          type.innerHTML += text[i];
+          i++;
+        }
+
+        setTimeout(typing, speed);
+      }
+
+      typing();
+    </script>
+  </body>
+</html>
