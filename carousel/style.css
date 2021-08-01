@@ -44,7 +44,6 @@ body {
   color: white;
   font-weight: bold;
   font-size: 24px;
-  transition: 0.6s ease;
   border-radius: 0 8px 8px 0;
   backdrop-filter: blur(1px);
   user-select: none;
@@ -111,23 +110,14 @@ body {
 }
 
 /* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
+.animate {
+  -webkit-animation-name: animate;
   -webkit-animation-duration: 1s;
-  animation-name: fade;
+  animation-name: animate;
   animation-duration: 1s;
 }
 
-@-webkit-keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fade {
+@keyframes animate {
   from {
     transform: scale(1.1);
   }

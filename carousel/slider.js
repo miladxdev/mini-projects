@@ -5,19 +5,20 @@ showSlides();
 function nextSlide() {
   slideIndex++;
   showSlides();
-  timer = initial; // reset timer
+  timer = _timer; // reset timer
 }
+
 function prevSlide() {
   slideIndex--;
   showSlides();
-  timer = initial; // reset timer
+  timer = _timer; // reset timer
 }
 
 // Thumbnail image controlls
 function currentSlide(n) {
   slideIndex = n - 1;
   showSlides();
-  timer = initial; // reset timer
+  timer = _timer; // reset timer
 }
 
 function showSlides() {
@@ -41,14 +42,14 @@ function showSlides() {
 }
 
 // autoplay slides
-let timer = 4;
-let initial = timer;
+let timer = 6;
+let _timer = timer;
 
 setInterval(() => {
   timer--;
 
   if (timer < 1) {
     nextSlide();
-    timer = initial;
+    timer = _timer;
   }
 }, 1000);

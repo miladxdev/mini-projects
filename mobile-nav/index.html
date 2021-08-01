@@ -45,14 +45,25 @@
       .nav-brand {
         font-size: 28px;
         color: white;
+        cursor: pointer;
+        transition: opacity 0.3s;
+      }
+      .nav-brand:hover {
+        opacity: 0.5;
       }
 
-      .nav-icon i {
+      .nav-icon {
         display: block;
         font-size: 24px;
         cursor: pointer;
         color: #fafafa;
+        cursor: pointer;
+        transition: opacity 0.3s;
       }
+      .nav-icon:hover {
+        opacity: 0.5;
+      }
+
       .nav-icon.close {
         position: absolute;
         top: 16px;
@@ -62,8 +73,8 @@
       .nav-list {
         position: fixed;
         top: 0;
-        right: -220px;
-        width: 200px;
+        right: -255px;
+        width: 250px;
         height: 100vh;
         display: flex;
         flex-direction: column;
