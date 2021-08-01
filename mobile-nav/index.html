@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font-awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Mobile responsive nav</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      body {
+        font-family: "@Microsoft Yahei Light";
+        background-image: linear-gradient(-45deg, hsl(210, 14%, 80%), hsl(210, 14%, 90%));
+        height: 100vh;
+      }
+
+      .wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 60px;
+        padding: 0 16px;
+        background-color: lightslategrey;
+      }
+      .nav-brand {
+        font-size: 28px;
+        color: white;
+      }
+
+      .nav-icon i {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: #fafafa;
+      }
+      .nav-icon.close {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+      }
+
+      .nav-list {
+        position: fixed;
+        top: 0;
+        right: -220px;
+        width: 200px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s ease-in-out;
+        background-color: hsl(210, 14%, 73%);
+      }
+      .nav-list.active {
+        right: 0;
+      }
+      .nav-item {
+        margin: 16px 0;
+        text-transform: uppercase;
+      }
+
+      .nav-link {
+        color: #fafafa;
+      }
+      .nav-link:hover {
+        color: #d4d4d4;
+      }
+
+      @media screen and (min-width: 600px) {
+        .nav-list {
+          position: initial;
+          width: initial;
+          height: initial;
+          background: transparent;
+          flex-direction: row;
+        }
+
+        .nav-item {
+          margin: 0 16px;
+        }
+        .nav-icon {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <nav>
+        <div class="nav-brand">
+          <i class="fab fa-github"></i>
+        </div>
+        <div class="nav-icon open">
+          <i class="fa fa-bars"></i>
+        </div>
+        <ul class="nav-list">
+          <div class="nav-icon close">
+            <i class="fa fa-times"></i>
+          </div>
+          <li class="nav-item">
+            <a href="#" class="nav-link current">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Destination</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Booking</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">About</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <script>
+      document.querySelector(".open").addEventListener("click", () => {
+        document.querySelector(".nav-list").classList.add("active");
+        console.log("click");
+      });
+
+      document.querySelector(".close").addEventListener("click", () => {
+        document.querySelector(".nav-list").classList.remove("active");
+        console.log("click");
+      });
+    </script>
+  </body>
+</html>
