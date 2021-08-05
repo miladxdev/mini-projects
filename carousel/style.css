@@ -26,21 +26,21 @@ body {
   display: block;
   width: 100%;
 }
-.mySlides::after {
+/* .mySlides::after {
   content: "";
   position: absolute;
   inset: 0 0 0 0;
   background-image: linear-gradient(-45deg, rgba(255, 0, 0, 0.1), rgba(0, 0, 255, 0.2));
-}
+} */
 /* Next & previous buttons */
 .prev,
 .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
+  transform: translate(0, -50%);
   width: auto;
   padding: 20px;
-  margin-top: -22px;
   color: white;
   font-weight: bold;
   font-size: 24px;

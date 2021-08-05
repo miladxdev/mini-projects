@@ -1,7 +1,7 @@
 let slideIndex = 0;
 showSlides();
 
-// Next/previous controll
+// Next-previous control
 function nextSlide() {
   slideIndex++;
   showSlides();
@@ -28,15 +28,15 @@ function showSlides() {
   if (slideIndex > slides.length - 1) slideIndex = 0;
   if (slideIndex < 0) slideIndex = slides.length - 1;
 
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
+  slides.forEach((slide) => {
+    slide.style.display = "none";
+  });
 
   slides[slideIndex].style.display = "block";
 
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].classList.remove("active");
-  }
+  dots.forEach((dot) => {
+    dot.classList.remove("active");
+  });
 
   dots[slideIndex].classList.add("active");
 }

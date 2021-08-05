@@ -51,14 +51,16 @@
             console.log(users);
             let html = "";
             for (let i in users) {
-              html += `<div class="user">
-                      <img src="${users[i].avatar_url}">
-                      <p>${users[i].login}</p>
-                      <p>ID: ${users[i].id}</p>
-                      
-                      </div>`;
+              html += `
+                <div class="user">
+                  <img src="${users[i].avatar_url}">
+                  <p>${users[i].login}</p>
+                  <p>ID: ${users[i].id}</p>
+                </div>`;
             }
             document.getElementById("users-container").innerHTML = html;
+          } else {
+            alert(xhr.status);
           }
         };
         xhr.send();
