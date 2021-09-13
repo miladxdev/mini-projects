@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background: #f9f9f9;
+      }
+      .timeline {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .timeline::after {
+        position: absolute;
+        content: "";
+        width: 6px;
+        background-color: #111122;
+        margin-left: -3px;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+      }
+
+      .container {
+        width: 50%;
+        /* margin: 20px 0; */
+        padding: 10px 30px;
+        position: relative;
+      }
+      .container::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-image: linear-gradient(-45deg, #444455, #222233);
+        /* border: 2px solid #333344; */
+        border-radius: 50%;
+        position: absolute;
+        right: -10px;
+        top: 30px;
+        z-index: 1;
+      }
+
+      .right {
+        left: 50%;
+      }
+      .right::after {
+        left: -10px;
+      }
+      .content {
+        position: relative;
+        background-image: linear-gradient(-45deg, #333344, #222233);
+        color: white;
+        border-radius: 14px;
+        padding: 8px 16px;
+      }
+      .content::before {
+        content: "";
+        border: 1px solid #222233;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent #222233;
+        position: absolute;
+        right: -10px;
+        top: 23px;
+      }
+      .right .content::before {
+        border: 1px solid #222233;
+        border-width: 10px 10px 10px 0px;
+        border-color: transparent #222233 transparent transparent;
+        left: -10px;
+        right: unset;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="timeline">
+      <div class="container left">
+        <div class="content">
+          <h2>2019</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, et repudiandae pariatur molestiae dolores ad explicabo distinctio
+            eos blanditiis quibusdam in neque assumenda qui consequatur consequuntur ea labore iure nulla?
+          </p>
+        </div>
+      </div>
+
+      <div class="container right">
+        <div class="content">
+          <h2>2020</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, et repudiandae pariatur molestiae dolores ad explicabo distinctio
+            eos blanditiis quibusdam in neque assumenda qui consequatur consequuntur ea labore iure nulla?
+          </p>
+        </div>
+      </div>
+
+      <div class="container left">
+        <div class="content">
+          <h2>2021</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, et repudiandae pariatur molestiae dolores ad explicabo distinctio
+            eos blanditiis quibusdam in neque assumenda qui consequatur consequuntur ea labore iure nulla?
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
