@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(17, 17, 17);
+  color: white;
+}
+
+.card-container {
+  max-width: 900px;
+  margin: auto;
+  margin-top: 40px;
+  border-radius: 10px;
+  background-color: rgb(36, 36, 36);
+  padding: 10px 0 10px 0;
+}
+
+.card {
+  max-width: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  /* background-color: lightskyblue; */
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  opacity: 0.8;
+}
+/* 
+.owl-dots {
+  display: none;
+} */

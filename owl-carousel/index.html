@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>owl-carousel</title>
+    <!-- owlCarousel style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <!-- owlCarousel theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <!-- Style -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h3>Top Selling</h3>
+    <div class="card-container owl-carousel">
+      <div class="card"><img src="img/img1.jpg" alt="" /></div>
+      <div class="card"><img src="img/img2.jpg" alt="" /></div>
+      <div class="card"><img src="img/img3.jpg" alt="" /></div>
+      <div class="card"><img src="img/img4.jpg" alt="" /></div>
+      <div class="card"><img src="img/img5.jpg" alt="" /></div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- owlCarousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script>
+      $(".card-container").owlCarousel({
+        autoplay: true,
+        loop: true,
+        items: 4,
+        margin: 20,
+        center: true,
+        dots: true,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 3,
+          },
+          1000: {
+            items: 6,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTTP Request</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <p>console <code>json-server --watch db.json</code> to start</p>
+        <h4>server</h4>
+        <p>http://localhost:3000/employees</p>
+        <h4>Home</h4>
+        <p>
+          <a href="http://localhost:3000" target="_blank"
+            >http://localhost:3000</a
+          >
+        </p>
+      </header>
+
+      <div class="buttons">
+        <button onclick="ajaxHttp();">Ajax</button>
+        <button onclick="user.fetchUser();">Fetch</button>
+        <button onclick="asyncAwait();">Async</button>
+        <button onclick="getUser();">GET</button>
+        <button onclick="sendUser();">Post</button>
+      </div>
+
+      <div id="info"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

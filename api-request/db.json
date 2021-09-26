@@ -1,0 +1,46 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "first_name": "Sebastian",
+      "last_name": "Eschweiler",
+      "email": "sebastian@codingt.com",
+      "password": "*******"
+    },
+    {
+      "id": 2,
+      "first_name": "Steve",
+      "last_name": "Palmer",
+      "email": "stevep97@gmail.com",
+      "password": "*******"
+    },
+    {
+      "id": 3,
+      "first_name": "Milad",
+      "last_name": "Gharibi",
+      "email": "milad@gmail.com",
+      "password": "*******"
+    },
+    {
+      "id": 4,
+      "first_name": "Steve",
+      "last_name": "Jobs",
+      "email": "apple@yahoo.com",
+      "password": "*******"
+    },
+    {
+      "id": 5,
+      "first_name": "Katy",
+      "last_name": "Perry",
+      "email": "katy@gmail.com",
+      "password": "*******"
+    },
+    {
+      "id": 6,
+      "first_name": "Sebastian",
+      "last_name": "Eschweiler",
+      "email": "sebastian@codingt.com",
+      "password": "*******"
+    }
+  ]
+}
