@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "@microsoft yahei light";
+}
+
+.card {
+  width: 280px;
+  padding: 14px;
+  background-color: lightslategrey;
+  background-color: #fafafa;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px -8px hsl(210, 14%, 85%);
+  border: 1px solid rgb(213, 218, 223);
+}
+
+.cover {
+  height: 270px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.cover img {
+  display: block;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.content {
+  position: relative;
+  color: #242627;
+  margin-top: 8px;
+}
+.content small {
+  display: block;
+  margin: 8px 0;
+  color: grey;
+}
+
+/* sleleton loader */
+.skeleton {
+  background: linear-gradient(90deg, hsl(210, 15%, 88%), hsl(210, 15%, 95%), hsl(210, 14%, 88%));
+  background-size: 200%;
+  animation: loader 1s infinite reverse;
+}
+h2.skeleton {
+  width: 50%;
+  height: 1em;
+}
+small.skeleton {
+  height: 1rem;
+  width: 4rem;
+}
+p.skeleton {
+  height: 3em;
+}
+
+/* animations */
+@keyframes loader {
+  from {
+    background-position: -100% 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
+.animate {
+  animation: animate 0.8s ease;
+}
+
+@keyframes animate {
+  from {
+    transform: rotateX(20deg);
+  }
+  to {
+    transform: rotateX(0deg);
+  }
+}

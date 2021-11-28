@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta title="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>skeleton loader</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="cover skeleton">
+        <img id="cover" src="" />
+      </div>
+
+      <div class="content">
+        <h2 id="title" class="skeleton"></h2>
+        <small id="subtitle" class="skeleton"></small>
+        <p id="about" class="skeleton"></p>
+      </div>
+    </div>
+
+    <script>
+      // dom elements
+      const cover = document.querySelector("#cover");
+      const title = document.querySelector("#title");
+      const subtitle = document.querySelector("#subtitle");
+      const about = document.querySelector("#about");
+
+      // data
+      const character = {
+        image: "./jinx.jpg",
+        title: "Jinx",
+        subtitle: "Leauge of legends",
+        about: "Jinx lives to wreak havoc without care for the consequences...",
+      };
+
+      // internet connection
+      let connection = true;
+
+      // resolves data after 4 sec if connection is ok
+      let load = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (connection) {
+            resolve(character);
+          } else {
+            reject("Connection failed!");
+          }
+        }, 4000);
+      });
+
+      load
+        .then((data) => {
+          // update dom content
+          cover.setAttribute("src", data.image);
+          cover.onload = () => {
+            // add class after img is fully loaded
+            cover.classList.add("animate");
+            title.innerText = data.title;
+            subtitle.innerText = data.subtitle;
+            about.innerText = data.about;
+
+            // remove all skeleton classes
+            let skeletons = document.querySelectorAll(".skeleton");
+            skeletons.forEach((skeleton) => {
+              skeleton.classList.remove("skeleton");
+            });
+          };
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    </script>
+  </body>
+</html>
